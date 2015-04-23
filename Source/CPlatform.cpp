@@ -17,8 +17,6 @@ CPlatform::CPlatform(CVector2f topLeft, float width, float height)
     points.push_back(topLeft + CVector2f(0.0f, height));
     mShape = CConvexShape(points);
     mShape.setFillColor(CColour::Blue);
-    mShape.setOutlineColor(CColour::Black);
-    mShape.setOutlineThickness(2.0f);
 }
 
 CPlatform::~CPlatform()
@@ -29,4 +27,9 @@ CPlatform::~CPlatform()
 void CPlatform::Draw(CWindow *theWindow)
 {
     theWindow->DrawShape(mShape);
+}
+
+CConvexShape CPlatform::GetHitbox()
+{
+    return mShape;
 }

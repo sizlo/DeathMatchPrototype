@@ -49,3 +49,15 @@ void CDMGame::GoToLocation(int theLocation, std::string filename)
     
     mCurrentLocation->Enter();
 }
+
+CLevel * CDMGame::GetCurrentLevel()
+{
+    CLevel *result = NULL;
+    
+    if (HasAllGameStates(kGameStateInGame))
+    {
+        result = static_cast<CLevel *>(mCurrentLocation);
+    }
+    
+    return result;
+}

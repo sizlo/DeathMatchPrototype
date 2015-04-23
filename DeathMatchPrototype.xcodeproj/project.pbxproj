@@ -13,6 +13,9 @@
 		2207D2B91AD5A80B00A7D8AC /* sansation.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2207D2B71AD5A80B00A7D8AC /* sansation.ttf */; };
 		222A7F651AE9446D006F28CE /* CLevel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 222A7F631AE9446D006F28CE /* CLevel.cpp */; };
 		222A7F6C1AE94C9C006F28CE /* CPlatform.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 222A7F6A1AE94C9C006F28CE /* CPlatform.cpp */; };
+		222A7F721AE94D34006F28CE /* CPlayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 222A7F701AE94D34006F28CE /* CPlayer.cpp */; };
+		222A7F781AE94F4C006F28CE /* CGlobals.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 222A7F761AE94F4C006F28CE /* CGlobals.cpp */; };
+		222A7F861AE95C37006F28CE /* CPlayerInputController.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 222A7F841AE95C37006F28CE /* CPlayerInputController.cpp */; };
 		223AB18F1AD587940084D6A3 /* CDMGame.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 223AB18D1AD587940084D6A3 /* CDMGame.cpp */; };
 		223AB1941AD588C90084D6A3 /* Main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 223AB1921AD588C90084D6A3 /* Main.cpp */; };
 /* End PBXBuildFile section */
@@ -50,6 +53,12 @@
 		222A7F641AE9446D006F28CE /* CLevel.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = CLevel.hpp; path = Source/CLevel.hpp; sourceTree = SOURCE_ROOT; };
 		222A7F6A1AE94C9C006F28CE /* CPlatform.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CPlatform.cpp; path = Source/CPlatform.cpp; sourceTree = SOURCE_ROOT; };
 		222A7F6B1AE94C9C006F28CE /* CPlatform.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = CPlatform.hpp; path = Source/CPlatform.hpp; sourceTree = SOURCE_ROOT; };
+		222A7F701AE94D34006F28CE /* CPlayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CPlayer.cpp; path = Source/CPlayer.cpp; sourceTree = SOURCE_ROOT; };
+		222A7F711AE94D34006F28CE /* CPlayer.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = CPlayer.hpp; path = Source/CPlayer.hpp; sourceTree = SOURCE_ROOT; };
+		222A7F761AE94F4C006F28CE /* CGlobals.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CGlobals.cpp; path = Source/CGlobals.cpp; sourceTree = SOURCE_ROOT; };
+		222A7F771AE94F4C006F28CE /* CGlobals.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = CGlobals.hpp; path = Source/CGlobals.hpp; sourceTree = SOURCE_ROOT; };
+		222A7F841AE95C37006F28CE /* CPlayerInputController.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CPlayerInputController.cpp; path = Source/CPlayerInputController.cpp; sourceTree = SOURCE_ROOT; };
+		222A7F851AE95C37006F28CE /* CPlayerInputController.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = CPlayerInputController.hpp; path = Source/CPlayerInputController.hpp; sourceTree = SOURCE_ROOT; };
 		223AB1471AD5863C0084D6A3 /* DeathMatchPrototype.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DeathMatchPrototype.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		223AB17F1AD586FD0084D6A3 /* TimGameLib.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = TimGameLib.xcodeproj; path = ../TimGameLib/TimGameLib.xcodeproj; sourceTree = "<group>"; };
 		223AB18D1AD587940084D6A3 /* CDMGame.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CDMGame.cpp; path = Source/CDMGame.cpp; sourceTree = SOURCE_ROOT; };
@@ -128,6 +137,12 @@
 				222A7F641AE9446D006F28CE /* CLevel.hpp */,
 				222A7F6A1AE94C9C006F28CE /* CPlatform.cpp */,
 				222A7F6B1AE94C9C006F28CE /* CPlatform.hpp */,
+				222A7F701AE94D34006F28CE /* CPlayer.cpp */,
+				222A7F711AE94D34006F28CE /* CPlayer.hpp */,
+				222A7F761AE94F4C006F28CE /* CGlobals.cpp */,
+				222A7F771AE94F4C006F28CE /* CGlobals.hpp */,
+				222A7F841AE95C37006F28CE /* CPlayerInputController.cpp */,
+				222A7F851AE95C37006F28CE /* CPlayerInputController.hpp */,
 			);
 			name = Source;
 			sourceTree = "<group>";
@@ -233,6 +248,9 @@
 				223AB1941AD588C90084D6A3 /* Main.cpp in Sources */,
 				222A7F6C1AE94C9C006F28CE /* CPlatform.cpp in Sources */,
 				223AB18F1AD587940084D6A3 /* CDMGame.cpp in Sources */,
+				222A7F861AE95C37006F28CE /* CPlayerInputController.cpp in Sources */,
+				222A7F781AE94F4C006F28CE /* CGlobals.cpp in Sources */,
+				222A7F721AE94D34006F28CE /* CPlayer.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -13,6 +13,7 @@
 #include "CRenderable.hpp"
 #include "CGameLocation.hpp"
 #include "CPlatform.hpp"
+#include "CPlayer.hpp"
 
 class CLevel : public CUpdateable, public CRenderable, public CGameLocation
 {
@@ -20,13 +21,21 @@ public:
     CLevel();
     ~CLevel();
     
+    void StartLevel();
+    
     void Update (CTime elapsedTime);
     void Draw (CWindow *theWindow);
     void Enter();
     void Exit();
     
+    bool IsAPlatformHere(CConvexShape hitbox,
+                         CVector2f *correctionVector = NULL);
+    
 private:
+    void HandleCollisions();
+    
     std::list<CPlatform *> mPlatforms;
+    CPlayer mPlayer;
 };
 
 #endif /* defined(__DeathMatchPrototype__CLevel__) */

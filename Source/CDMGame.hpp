@@ -11,6 +11,8 @@
 
 #include "CGame.hpp"
 
+class CLevel;
+
 enum EDMGameLocation
 {
     kGameLocationLevel = kGameLocationDummy + 1
@@ -25,6 +27,7 @@ public:
     
     void InitialiseOptions();
     void GoToLocation(int theLocation, std::string filename);
+    CLevel * GetCurrentLevel();
 
 };
 
