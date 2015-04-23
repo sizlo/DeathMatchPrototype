@@ -11,7 +11,7 @@
 int main(int argc, char **argv)
 {
     CDMGame theGame;
-    theGame.Init(kGameLocationDummy);
+    theGame.Init(kGameLocationLevel);
     int returnCode = theGame.Run();
     theGame.Cleanup();
     

@@ -11,10 +11,21 @@
 
 #include "CGame.hpp"
 
+enum EDMGameLocation
+{
+    kGameLocationLevel = kGameLocationDummy + 1
+};
+
 class CDMGame : public CGame
 {
 public:
+    static CDMGame * Get();
+    
     CDMGame();
+    
+    void InitialiseOptions();
+    void GoToLocation(int theLocation, std::string filename);
+
 };
 
 #endif /* defined(__DeathMatchPrototype__CDMGame__) */
