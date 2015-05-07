@@ -1,5 +1,8 @@
 cmake_minimum_required (VERSION 3.2)
 
+# Use c++11
+set(CMAKE_CXX_FLAGS "-std=c++11 -stdlib=libc++")
+
 # Set up project
 project (DeathMatchPrototype)
 
@@ -31,7 +34,7 @@ include_directories(${TIM_GAME_LIB_ROOT}/Source)
 include_directories(Source)
 
 # DeathMatchPrototype executable target
-add_executable(DeathMatchPrototype
+add_executable(DeathMatchPrototype MACOSX_BUNDLE
 	Source/CDMGame.cpp
 	Source/CGlobals.cpp
 	Source/CLevel.cpp
@@ -48,6 +51,10 @@ add_dependencies(DeathMatchPrototype TimGameLib)
 if (WIN32)
 	# Link Shlwapi.lib for finding exe path
 	target_link_libraries(DeathMatchPrototype Shlwapi.lib)
+elseif(APPLE)
+	# Link Foundation.framework for finding bundle path
+	find_library(FOUNDATION_FRAMEWORK Foundation)
+	target_link_libraries(DeathMatchPrototype ${FOUNDATION_FRAMEWORK})
 endif()
 
 # Link SFML
