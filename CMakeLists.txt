@@ -19,6 +19,9 @@ endif()
 # CCMake modules
 set (CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/CMake;${TIM_GAME_LIB_ROOT}/CMake")
 
+# Set up source file list
+include(DeathMatchPrototype)
+
 # We want to use cotire for precompiled header
 include(cotire)
 
@@ -34,15 +37,7 @@ include_directories(${TIM_GAME_LIB_ROOT}/Source)
 include_directories(Source)
 
 # DeathMatchPrototype executable target
-add_executable(DeathMatchPrototype MACOSX_BUNDLE
-	Source/CDMGame.cpp
-	Source/CGlobals.cpp
-	Source/CLevel.cpp
-	Source/CPlatform.cpp
-	Source/CPlayer.cpp
-	Source/CPlayerInputController.cpp
-	Source/Main.cpp
-)
+add_executable(DeathMatchPrototype MACOSX_BUNDLE ${DMP_SOURCES})
 
 # TimGameLib library target depency
 add_library(TimGameLib ${TIM_GAME_LIB_SOURCES})
