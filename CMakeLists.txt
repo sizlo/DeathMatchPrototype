@@ -36,8 +36,18 @@ include_directories(${TIM_GAME_LIB_ROOT}/Source)
 # Include self
 include_directories(Source)
 
+if (APPLE)
+  # Locate all recourses
+  FILE(GLOB COPY_RESOURCES ${PROJECT_SOURCE_DIR}/Data/*)
+  set_source_files_properties(
+    "${COPY_RESOURCES}"
+    PROPERTIES
+    MACOSX_PACKAGE_LOCATION Resources
+  )
+endif()
+
 # DeathMatchPrototype executable target
-add_executable(DeathMatchPrototype MACOSX_BUNDLE ${DMP_SOURCES})
+add_executable(DeathMatchPrototype MACOSX_BUNDLE ${DMP_SOURCES} ${COPY_RESOURCES})
 
 # TimGameLib library target depency
 add_library(TimGameLib ${TIM_GAME_LIB_SOURCES})
@@ -50,6 +60,9 @@ elseif(APPLE)
 	# Link Foundation.framework for finding bundle path
 	find_library(FOUNDATION_FRAMEWORK Foundation)
 	target_link_libraries(DeathMatchPrototype ${FOUNDATION_FRAMEWORK})
+
+  # Add the resources to the bundle
+  set_target_properties(DeathMatchPrototype PROPERTIES RESOURCE "${COPY_RESOURCES}")
 endif()
 
 # Link SFML
