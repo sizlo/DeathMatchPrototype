@@ -36,9 +36,11 @@ include_directories(${TIM_GAME_LIB_ROOT}/Source)
 # Include self
 include_directories(Source)
 
+# Locate all recourses
+FILE(GLOB RESOURCE_FILES ${PROJECT_SOURCE_DIR}/Data/*)
+
+# Mark resource files as resources
 if (APPLE)
-  # Locate all recourses
-  FILE(GLOB RESOURCE_FILES ${PROJECT_SOURCE_DIR}/Data/*)
   set_source_files_properties(
     "${RESOURCE_FILES}"
     PROPERTIES
@@ -56,6 +58,15 @@ add_dependencies(DeathMatchPrototype TimGameLib)
 if (WIN32)
 	# Link Shlwapi.lib for finding exe path
 	target_link_libraries(DeathMatchPrototype Shlwapi.lib)
+
+  # Copy resource files to exe folder
+  foreach(RES ${RESOURCE_FILES})
+    add_custom_command(
+      TARGET DeathMatchPrototype
+      COMMAND ${CMAKE_COMMAND} -E
+        copy_if_different ${RES} $<TARGET_FILE_DIR:DeathMatchPrototype>
+    )
+  endforeach()
 elseif(APPLE)
 	# Link Foundation.framework for finding bundle path
 	find_library(FOUNDATION_FRAMEWORK Foundation)
