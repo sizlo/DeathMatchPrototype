@@ -62,7 +62,7 @@ if (WIN32)
   # Copy resource files to exe folder
   foreach(RES ${RESOURCE_FILES})
     add_custom_command(
-      TARGET DeathMatchPrototype
+      TARGET DeathMatchPrototype POST_BUILD
       COMMAND ${CMAKE_COMMAND} -E
         copy_if_different ${RES} $<TARGET_FILE_DIR:DeathMatchPrototype>
     )
